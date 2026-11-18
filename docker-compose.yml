@@ -1,0 +1,51 @@
+services:
+  # 1. MySQL Database
+  mysql_db:
+    image: mysql:8.0
+    container_name: 360connect_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: RootPassword@123
+      MYSQL_DATABASE: alumni_db
+      MYSQL_USER: alumni_user
+      MYSQL_PASSWORD: StrongPass@123
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  # 2. Next.js GD Preparation AI Module
+  gd_service:
+    build:
+      context: ./gd_preparation
+      dockerfile: Dockerfile
+    container_name: 360connect_gd
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - GEMINI_MODEL=gemini-3.5-flash
+      - NODE_ENV=production
+
+  # 3. Main Streamlit Alumni Portal
+  streamlit_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: 360connect_portal
+    restart: always
+    ports:
+      - "8501:8501"
+    environment:
+      - MYSQL_HOST=mysql_db
+      - MYSQL_PORT=3306
+      - MYSQL_DB=alumni_db
+      - MYSQL_USER=alumni_user
+      - MYSQL_PASS=StrongPass@123
+    depends_on:
+      - mysql_db
+      - gd_service
+
+volumes:
+  mysql_data:

@@ -1,0 +1,17 @@
+﻿L14: page_icon="≡ƒÄô",
+L187: # Γ£à Add numbering column starting from 1
+L195: # Γ£à Show df without any index in ALL streamlit versions
+L328: st.success("LinkedIn connected Γ£à")
+L594: st.link_button("≡ƒöù Continue with LinkedIn", linkedin_auth_url(), use_container_width=True)
+L596: st.button("≡ƒöù Continue with LinkedIn", disabled=True, use_container_width=True)
+L610: if st.button("≡ƒÄô Student Registration", key="btn_to_student_reg", use_container_width=True):
+L620: if st.button("≡ƒÄô Alumni Registration", key="btn_to_alumni_reg", use_container_width=True):
+L865: st.link_button("≡ƒöù Connect LinkedIn", linkedin_auth_url(), use_container_width=True)
+L872: st.success("LinkedIn Connected Γ£à")
+L874: if st.button("Γ£à Mark as LinkedIn Verified & Save ID"):
+L883: st.success("LinkedIn verified saved Γ£à")
+L890: st.markdown("**Status:** LinkedIn Verified <span class='badge'>Γ£à Verified</span>", unsafe_allow_html
+L957: st.success("Profile saved Γ£à")
+L1232: if selected_nav == "≡ƒÜ¬ Logout":
+L1241: <span style="font-size:20px; color:#334155;">Γÿ░</span>
+L1317: <div class="kpi-title">VERIFIED ALUMNI <span style="color:#6366f1;">Γ£ö</span></div>
