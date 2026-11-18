@@ -1,7 +1,8 @@
 streamlit
-sqlalchemy
-pymysql
+pandas
 bcrypt
 requests
-pandas
+Pillow
+SQLAlchemy
+PyMySQL
 cryptography
